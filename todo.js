@@ -1,4 +1,4 @@
-let tasks = [{ done: false, text: 'gym', id: 1}];
+let tasks = [{ done: false, text: 'Nikhil Singh', id: 1}];
 const tasksList = document.getElementById("list");
 const addTaskInputBox = document.getElementById("add-task");
 
