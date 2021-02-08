@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Account Login - Score</title>
+    <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
+    <script>
+    function submitForm() {
+      grecaptcha.enterprise.ready(function() {
+        grecaptcha.enterprise.execute(
+          'reCAPTCHA_site_key', {action: 'account_login'}).then(function(token) {
+           document.getElementById("token").value = token;
+           document.getElementByID("loginForm").submit();
+        });
+      });
+    }
+    </script>
+  </head>
+  <body>
+    <form id="loginForm" action="?" method="POST">
+      Username: <input type="text" name="username"/><br/>
+      Password: <input type="password" name="password"/><br/>
+      <input type="hidden" id="token" name="recaptcha_token"/>
+      <button onclick="submitForm()">Login</button>
+    </form>
+  </body>
+</html>
